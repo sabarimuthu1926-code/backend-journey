@@ -10,7 +10,7 @@ public class CustomFilter {
     }
 
     public static boolean isPalindrome(String s){
-        if(s.length()==1){
+        if(s.length()<=1){
             return true;
         }else{
             return (s.charAt(0) == s.charAt(s.length()-1)) &&
