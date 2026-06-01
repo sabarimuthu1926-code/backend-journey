@@ -1,8 +1,5 @@
 package week2_method_refrence_and_streams;
-
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamOperations {
     public static void main(String[] args) {
@@ -91,14 +88,17 @@ public class StreamOperations {
 //        AtomicInteger i = new AtomicInteger(0);
 //        Stream.of(data).filter(x->i.getAndIncrement()%2==0).forEach(System.out::println);
 
-        int[] rawScores = {32, 85, 45, 90, 100, 12};
-        List<Integer> failedMarks = IntStream.of(rawScores).filter(a->a<50).boxed().collect(Collectors.toList());
-        System.out.println(failedMarks);
+//        int[] rawScores = {32, 85, 45, 90, 100, 12};
+//        List<Integer> failedMarks = IntStream.of(rawScores).filter(a->a<50).boxed().collect(Collectors.toList());
+//        System.out.println(failedMarks);
+//
+//        int sum = IntStream.rangeClosed(1,5).filter(a->a%2!=0).map(a->a*a).sum();
+//        System.out.println(sum);
+//
+//        List<String> codes = IntStream.of(101,102,103).mapToObj(a->"Code ID: "+a).toList();
+//        System.out.println(codes);
 
-        int sum = IntStream.rangeClosed(1,5).filter(a->a%2!=0).map(a->a*a).sum();
-        System.out.println(sum);
-
-        List<String> codes = IntStream.of(101,102,103).mapToObj(a->"Code ID: "+a).toList();
-        System.out.println(codes);
+        Stream<String> st1 = Stream.of("Luffy", "Naruto", "Nami", "Nezuko", "Asta", "Ace", "Aegon");
+        st1.filter(a->a.startsWith("A")).peek(System.out::println).map(String::toUpperCase).peek(System.out::println).count();
     }
 }
