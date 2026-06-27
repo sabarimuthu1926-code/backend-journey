@@ -15,6 +15,20 @@ public class Filter {
         movies.add(m3);
 
         Collections.sort(movies);
+        System.out.println("Year Filter");
+        for (Movie m : movies){
+            System.out.println(m.getName() +" "+ m.getYear() +" "+ m.getRating());
+        }
+
+
+        movies.sort(new CustomRatingFilter());
+        System.out.println("Rating Filter");
+        for (Movie m : movies){
+            System.out.println(m.getName() +" "+ m.getYear() +" "+ m.getRating());
+        }
+
+        movies.sort(new CustomNameFilter());
+        System.out.println("Name Filter");
         for (Movie m : movies){
             System.out.println(m.getName() +" "+ m.getYear() +" "+ m.getRating());
         }
